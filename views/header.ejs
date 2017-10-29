@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="logo">
+                <a title='主页' href="/">
+                    <img src="/images/1.png" alt="">
+                </a>
+            </div>
+            <div class="slogan">
+                <div class="slogan-title">
+                    创作你的创作
+                </div>
+            </div>
+            <% if (user) { %>
+                <div class="login">
+                    <a title="发表" href="/post">
+                        <div>发表</div>
+                    </a>
+                </div>
+                <div class="register">
+                    <a title="登出" href="/logout">登出</a>
+                </div>
+                <% } else { %>
+                    <div class="login">
+                        <a title="登录" href="/login">登录</a>
+                    </div>
+                    <div class="register">
+                        <a title="注册" href="/reg">注册</a>
+                    </div>
+                    <% } %>
+        </div>
+        <img src="/images/2.png" alt="" class="img-phone">
+        <div class="guide">
+            <ul class="info">
+                <li>随时随地发现和创作内容</li>
+                <li>每天为你精选好文</li>
+                <li>第一时间收到作者文章更新</li>
+            </ul>
+        </div>
+        <div>
+            <div class="split-line"></div>
+            <div class="top-title">
+                <span>热门专题</span>
+                <span class="upload">
+                    <a title='上传' href="/upload">上传</a>
+                </span>
+            </div>
+            <div class="recommend">
+                <div class="collection">电视剧</div>
+                <div class="collection">想法</div>
+                <div class="collection">人物</div>
+                <div class="collection">体育</div>
+                <div class="collection">买买买购物指南</div>
+                <div class="collection">健康养生</div>
+                <div class="collection">建筑圈</div>
+            </div>
+        </div>
+        <div class="split-line"></div>
+        <div class="footer">
+            <div class="app-bottom">
+                下载简书，创作你的创作
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

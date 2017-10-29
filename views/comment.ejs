@@ -1,0 +1,33 @@
+<div>
+  <div class="comment-top">
+    <form action="" method="post">
+      <% if (user) { %>
+        <input type="text" name="name" value="<%= user.name %>" id='comment-tijiao'  readonly  unselectable="on" >
+        <textarea name="content" rows="3" cols="49" placeholder="写下你的评论..." class="comment-ping"></textarea>
+        <input type="submit" value="评论" class="comment-submit">
+        <% } %>
+    </form>
+  </div>
+  <div class="comment-data">
+    <div class="comment-xian">
+        <span class="comment-tiao"><%= post.comments.length %>条评论</span>
+        <span class="xian"></span>
+      </div>
+    <% post.comments.forEach(function (comment, index) { %>
+      
+    <div class="comment-yonghu">
+      <div class="comment-v">
+        <a href="/u/<%= comment.name %>">
+          <%= comment.name %>
+        </a>
+        <span>
+          评论于<%= comment.time %>
+        </span>
+      </div>
+      <div class="comment-dd">
+          <%- comment.content %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

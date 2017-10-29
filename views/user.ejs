@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="logo">
+                <a title='主页' href="/">
+                    <img src="/images/1.png" alt="">
+                </a>
+            </div>
+            <div class="slogan">
+                <div class="slogan-title">
+                    创作你的创作
+                </div>
+            </div>
+        </div>
+       
+        <div class="user-person">
+            <div class="user-author">
+                <div class="user-name">
+                    <%= posts[0].name %>
+                </div>
+                <div class="user-badge">
+                    <img src="/images/4.png" alt="">
+                    简书用户
+                </div>
+                <div class="user-success">
+                    <span>关注</span>
+                </div>
+            </div>
+        </div>
+        <div class="split-line"></div>
+        <% posts.forEach(function (post, index) { %>
+        <div class="index-feed">
+            <div class="index-item">
+                <h2 class="index-title">
+                    <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">
+                      <%= post.title %>
+                    </a>
+                </h2>
+                <div class="index-expand">
+                    <div class="index-author">
+                        <span class="index-summary">
+                            作者：
+                            <span class='index-juti'>
+                                <a href="/u/<%= post.name %>">
+                                  <%= post.name %>
+                                </a>
+                            </span> |
+                            <span class="index-date">日期：
+                                <%= post.time.minute %>                                
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="index-text">
+                            <%- post.post %> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+        <div class="user-footer">
+            <div class="user-app">
+                 <a href="">
+                     退出
+                 </a>
+                 <b>|</b>
+                 <a href="">
+                     打开App
+                 </a>
+                 <b>|</b>
+                 <a href="">
+                     热门文章
+                 </a>
+            </div>
+            <div class="user-download">
+                下载简书，创作你的创作            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

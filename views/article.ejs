@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="logo">
+                <a title='主页' href="/">
+                    <img src="/images/1.png" alt="">
+                </a>
+            </div>
+            <div class="slogan">
+                <div class="slogan-title">
+                    创作你的创作
+                </div>
+            </div>
+         <% if (user && (user.name == post.name)) { %>
+                <div class="login">
+                    <a title="编辑" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">
+                        <div>编辑</div>
+                    </a>
+                </div>
+                <div class="register">
+                    <a title="删除" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a>
+                </div>
+                <% } %>
+        </div>
+        <h1 class="article-title">
+            <%= post.title %>
+        </h1>
+        <div class="article-info">
+            <div class="article-link">
+                <div class="article-name">
+                    <a href="/u/<%= post.name %>">
+                        <%= post.name %>
+                    </a>
+                </div>
+                <span class="article-badge">
+                    <img src="/images/3.png" alt=""> 简书用户
+                </span>
+            </div>
+            <div class="article-meta">
+                <span><%= post.time.minute %></span>
+            </div>
+        </div>
+        <div class="article-content">
+            <%- post.post %>
+        </div>
+        <div class="article-support">
+            <p class="article-data">一份打赏一份情</p>
+            <div class="article-pay">赞赏支持</div>
+        </div>
+        <%- include comment %>
+        <div class="user-footer">
+            <div class="user-app">
+                 <a href="">
+                     退出
+                 </a>
+                 <b>|</b>
+                 <a href="">
+                     打开App
+                 </a>
+                 <b>|</b>
+                 <a href="">
+                     热门文章
+                 </a>
+            </div>
+            <div class="user-download">
+                下载简书，创作你的创作            
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
