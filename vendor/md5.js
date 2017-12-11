@@ -1,3 +1,4 @@
+// md5密码加密
 var crypto = require('crypto')
 module.exports = function (mingma) {
     var md5 = crypto.createHash('md5')

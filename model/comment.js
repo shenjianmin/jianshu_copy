@@ -5,9 +5,7 @@ function Comment(name, day, title, comment) {
     this.title = title;
     this.comment = comment;
 }
-
 module.exports = Comment;
-
 Comment.prototype.save = function (callback) {
     var name = this.name,
         day = this.day,

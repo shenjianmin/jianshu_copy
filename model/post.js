@@ -1,4 +1,5 @@
 let mongodb = require('../config/db2')
+// 引入markdown模块,因为发表的文章需要用markdown格式来格式化
 markdown = require('markdown').markdown
 function Post(name, title, post) {
   this.name = name;
@@ -68,6 +69,7 @@ Post.getAll = function (name, callback) {
           return callback(err);
         }
         docs.forEach(function (doc) {
+          // markdown格式化
           doc.post = markdown.toHTML(doc.post);
         })
         callback(null, docs);
@@ -170,9 +172,7 @@ Post.remove = function (name, day, title, callback) {
         "name": name,
         "time.day": day,
         "title": title
-      }, {
-          w: 1
-        }, function (err) {
+      },  function (err) {
           mongodb.close();
           if (err) {
             return callback(err);

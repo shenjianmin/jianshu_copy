@@ -1,3 +1,4 @@
+// 通过mongoose方法连接数据库
 let mongoose = require('mongoose')
 let db = mongoose.createConnection('mongodb://127.0.0.1:27017/jianshu')
 db.on('open',cb=>{
